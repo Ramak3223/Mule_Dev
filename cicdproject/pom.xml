@@ -59,7 +59,7 @@
 						  <muleVersion>4.9.7</muleVersion>
 						  <username>Kanneganti7905</username>
 						  <password>Ishaan@2018</password>
-						  <applicationName>cicdProject</applicationName>
+						  <applicationName>cicdproject</applicationName>
 						  <replicas>1</replicas>
 						  <vCores>1</vCores>
 						  <deploymentSettings>
