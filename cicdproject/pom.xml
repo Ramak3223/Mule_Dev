@@ -32,6 +32,40 @@
 			</plugin>
 		</plugins>
 	</build>
+	<profiles>
+    <profile>
+        <id>Development</id>
+        <properties>
+            <env>Development</env>
+            <anypoint.username>Kanneganti7905</anypoint.username>
+            <anypoint.password>Ishaan@2018</anypoint.password>
+            <anypoint.env>Development</anypoint.env>
+            <cloudhub.workerType>MICRO</cloudhub.workerType>
+            <cloudhub.workers>1</cloudhub.workers>
+            <cloudhub.region>us-east-1</cloudhub.region>
+        </properties>
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.mule.tools.maven</groupId>
+                    <artifactId>mule-maven-plugin</artifactId>
+                    <version>${mule.maven.plugin.version}</version>
+                    <configuration>
+                        <cloudHubDeployment>
+                            <username>${anypoint.username}</username>
+                            <password>${anypoint.password}</password>
+                            <applicationName>${project.artifactId}</applicationName>
+                            <environment>${anypoint.env}</environment>
+                            <workerType>${cloudhub.workerType}</workerType>
+                            <workers>${cloudhub.workers}</workers>
+                            <region>${cloudhub.region}</region>
+                        </cloudHubDeployment>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </build>
+    </profile>
+	</profiles>
 
 	<dependencies>
 		<dependency>
