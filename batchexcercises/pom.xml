@@ -33,17 +33,14 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
-				<configurations>
-					<configuration>
-						<sharedLibraries>
-							<sharedLibrary>
-								<groupId>com.mycompany</groupId>
-								<artifactId>ojdbc17</artifactId>
-							</sharedLibrary>
-						</sharedLibraries>
-					</configuration>
-					<configuration>
-							<cloudhub2Deployment>
+				<configuration>
+					<sharedLibraries>
+						<sharedLibrary>
+							<groupId>com.mycompany</groupId>
+							<artifactId>ojdbc17</artifactId>
+						</sharedLibrary>
+					</sharedLibraries>
+					<cloudhub2Deployment>
 							  <uri>https://anypoint.mulesoft.com</uri>
 							  <provider>MC</provider>
 							  <environment>Development</environment>
@@ -63,9 +60,8 @@
 								  </inbound>
 								</http>
 							  </deploymentSettings>
-							</cloudhub2Deployment>
-					</configuration>
-				</configurations>
+					</cloudhub2Deployment>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
