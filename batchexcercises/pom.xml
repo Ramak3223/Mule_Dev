@@ -33,37 +33,39 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
-				<configuration>
-					<sharedLibraries>
-						<sharedLibrary>
-							<groupId>com.mycompany</groupId>
-							<artifactId>ojdbc17</artifactId>
-						</sharedLibrary>
-					</sharedLibraries>
-				</configuration>
-				<configuration>
-						<cloudhub2Deployment>
-						  <uri>https://anypoint.mulesoft.com</uri>
-						  <provider>MC</provider>
-						  <environment>Development</environment>
-						  <target>Cloudhub-US-East-2</target>
-						  <muleVersion>4.9.7</muleVersion>
-						  <username>Kanneganti7905</username>
-						  <password>Ishaan@2018</password>
-						  <applicationName>batchexcercises</applicationName>
-						  <replicas>1</replicas>
-						  <vCores>1</vCores>
-						  <deploymentSettings>
-							<http>
-							  <inbound>
-								<publicUrl>https://localhost:8081</publicUrl>
-								<forwardSslSession>true</forwardSslSession>
-								<lastMileSecurity>true</lastMileSecurity>
-							  </inbound>
-							</http>
-						  </deploymentSettings>
-						</cloudhub2Deployment>
-				</configuration>
+				<configurations>
+					<configuration>
+						<sharedLibraries>
+							<sharedLibrary>
+								<groupId>com.mycompany</groupId>
+								<artifactId>ojdbc17</artifactId>
+							</sharedLibrary>
+						</sharedLibraries>
+					</configuration>
+					<configuration>
+							<cloudhub2Deployment>
+							  <uri>https://anypoint.mulesoft.com</uri>
+							  <provider>MC</provider>
+							  <environment>Development</environment>
+							  <target>Cloudhub-US-East-2</target>
+							  <muleVersion>4.9.7</muleVersion>
+							  <username>Kanneganti7905</username>
+							  <password>Ishaan@2018</password>
+							  <applicationName>batchexcercises</applicationName>
+							  <replicas>1</replicas>
+							  <vCores>1</vCores>
+							  <deploymentSettings>
+								<http>
+								  <inbound>
+									<publicUrl>https://localhost:8081</publicUrl>
+									<forwardSslSession>true</forwardSslSession>
+									<lastMileSecurity>true</lastMileSecurity>
+								  </inbound>
+								</http>
+							  </deploymentSettings>
+							</cloudhub2Deployment>
+					</configuration>
+				</configurations>
 			</plugin>
 		</plugins>
 	</build>
