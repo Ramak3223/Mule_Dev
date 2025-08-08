@@ -72,8 +72,7 @@
 							</http>
 						  </deploymentSettings>
 						</cloudhub2Deployment>
-					  </configuration>
-                    </configuration>
+					</configuration>
                 </plugin>
             </plugins>
         </build>
