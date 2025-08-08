@@ -59,6 +59,7 @@
                             <workerType>${cloudhub.workerType}</workerType>
                             <workers>${cloudhub.workers}</workers>
                             <region>${cloudhub.region}</region>
+							<cloudHubVersion>2.0</cloudHubVersion>
                         </cloudHubDeployment>
                     </configuration>
                 </plugin>
