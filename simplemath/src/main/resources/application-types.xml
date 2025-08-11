@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="json" format="json">
+      <types:shape format="weave" example="examples/samplemath.json"><![CDATA[%dw 2.0
+
+type json = {|
+  num1: Number {"typeId": "int"}, 
+  num2: Number {"typeId": "int"}
+|} {"example": "{\\\"num1\\\":4,\\\"num2\\\":10}"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#298ea24a-3f31-4894-a42e-49a6205c165f">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="json"/>
+        </types:message>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="json"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>

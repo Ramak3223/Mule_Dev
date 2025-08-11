@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="89775f6f-4968-4889-ad3f-bdee0c88aa9d" basePath="/math" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="simplemathFlow" doc:id="b97f68fa-e870-485a-81db-0341e4251b3d" >
+		<http:listener doc:name="Listener" doc:id="351536e6-9f64-4385-b22c-a834b71d8894" config-ref="HTTP_Listener_config" path="/add" allowedMethods="POST"/>
+		<logger level="INFO" doc:name="Logger" doc:id="05488920-6cda-4562-adfe-1be8728c29e7" message="#[payload]" category="OriginalPayload"/>
+		<ee:transform doc:name="Transform Message" doc:id="298ea24a-3f31-4894-a42e-49a6205c165f" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+var addNumbers = (a, b) -> a + b
+---
+{
+  sum: addNumbers(payload.num1, payload.num2)
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="94750486-882f-4415-b294-8dfeee27ba09" message="#[payload]" category="payloadafter math"/>
+	</flow>
+</mule>
