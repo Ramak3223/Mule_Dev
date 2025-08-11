@@ -9,25 +9,15 @@ http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/cu
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="d1617709-73a3-4429-ac82-37ba67dcb89c" basePath="/simple" >
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
-	<db:config name="Database_Config" doc:name="Database Config" doc:id="7d921d74-eb00-4e30-bad9-b98c1db179dc" >
-		<db:oracle-connection host="10.0.0.175" user="learnmulesoft" password="Admin123" serviceName="XEPDB1" />
-	</db:config>
 	<flow name="simpleapiFlow" doc:id="3acc6b04-ff5d-4a8e-b379-a9f9a8ce2552" >
 		<http:listener doc:name="Listener" doc:id="09f2b514-678d-456a-b2d7-09132572340e" config-ref="HTTP_Listener_config" path="/test" allowedMethods="POST"/>
 		<logger level="INFO" doc:name="Logger" doc:id="898c5775-eb22-4b88-a4a2-66c121d89258" message="#[payload]" category="OriginalPayload"/>
-		<db:select doc:name="Select" doc:id="96ebfaba-92b7-4541-9960-27a91ea7b7d5" config-ref="Database_Config">
-			<db:sql ><![CDATA[select EMP_ID, EMP_NAME, EMP_EMAIL from employees]]></db:sql>
-		</db:select>
 		<ee:transform doc:name="Transform Message" doc:id="c27c5d3c-b67c-4ee7-a2ea-5c2035328358" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
 ---
-payload map ((row, index) -> {
-    ID: row.EMP_ID,
-    Name: row.EMP_NAME,
-    Email: row.EMP_EMAIL
-})]]></ee:set-payload>
+payload]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
 		<logger level="INFO" doc:name="Logger" doc:id="fc6962a3-5406-4396-a4ad-756577e8a51a" message="#[payload]" category="FinalPayload"/>

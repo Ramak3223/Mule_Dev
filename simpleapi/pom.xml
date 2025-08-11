@@ -4,7 +4,7 @@
 
 	<groupId>4c4ac82b-b640-4317-b475-9a1556de4636</groupId>
 	<artifactId>simpleapi</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.3</version>
 	<packaging>mule-application</packaging>
 
 	<name>simpleapi</name>
@@ -55,12 +55,6 @@
 							</http>
 						</deploymentSettings>
 					</cloudhub2Deployment>
-					<sharedLibraries>
-						<sharedLibrary>
-							<groupId>com.mycompany</groupId>
-							<artifactId>ojdbc17</artifactId>
-						</sharedLibrary>
-					</sharedLibraries>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -78,17 +72,6 @@
 			<artifactId>mule-sockets-connector</artifactId>
 			<version>1.2.6</version>
 			<classifier>mule-plugin</classifier>
-		</dependency>
-		<dependency>
-			<groupId>org.mule.connectors</groupId>
-			<artifactId>mule-db-connector</artifactId>
-			<version>1.14.16</version>
-			<classifier>mule-plugin</classifier>
-		</dependency>
-		<dependency>
-			<groupId>com.mycompany</groupId>
-			<artifactId>ojdbc17</artifactId>
-			<version>0.1</version>
 		</dependency>
 	</dependencies>
 
