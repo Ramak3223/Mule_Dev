@@ -21,5 +21,6 @@ payload]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
 		<logger level="INFO" doc:name="Logger" doc:id="fc6962a3-5406-4396-a4ad-756577e8a51a" message="#[payload]" category="FinalPayload"/>
+		<logger level="INFO" doc:name="Logger" doc:id="4c2439e0-1ce7-430a-ad89-0719328064e5" message="#[payload]" category="newPayload"/>
 	</flow>
 </mule>
