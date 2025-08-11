@@ -49,8 +49,8 @@
 							<http>
 								<inbound>
 									<publicUrl>https://simplemath.us-e2.cloudhub.io</publicUrl>
-									<forwardSslSession>true</forwardSslSession>
-									<lastMileSecurity>true</lastMileSecurity>
+									<forwardSslSession>false</forwardSslSession>
+									<lastMileSecurity>false</lastMileSecurity>
 								</inbound>
 							</http>
 						</deploymentSettings>
