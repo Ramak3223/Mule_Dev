@@ -7,7 +7,7 @@
 
     <groupId>com.mycompany</groupId>
     <artifactId>cicddeploymenttestapi</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>mule-application</packaging>
 
     <name>cicddeploymenttestapi</name>
@@ -91,10 +91,6 @@
 			<name>Anypoint Exchange</name>
 			<url>https://maven.anypoint.mulesoft.com/api/v3/maven</url>
 		</snapshotRepository>
-		<repository>
-			<id>anypoint-exchange-release</id>
-			<url>https://maven.anypoint.mulesoft.com/api/v3/maven/releases</url>
-		</repository>
 	</distributionManagement>
     <dependencies>
         <dependency>
