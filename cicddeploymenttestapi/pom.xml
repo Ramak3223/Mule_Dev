@@ -38,13 +38,13 @@
 						<muleVersion>${app.runtime}</muleVersion>
 						<username>Kanneganti7905</username>
 						<password>Bhavika@1431</password>
-						<applicationName>${name}</applicationName>
+						<applicationName>${project.name}</applicationName>
 						<replicas>1</replicas>
 						<vCores>0.1</vCores>
 						<deploymentSettings>
 							<http>
 								<inbound>
-									<publicUrl>https://${name}.us-e2.cloudhub.io</publicUrl>
+									<publicUrl>https://${project.name}.us-e2.cloudhub.io</publicUrl>
 									<forwardSslSession>false</forwardSslSession>
 									<lastMileSecurity>false</lastMileSecurity>
 								</inbound>
