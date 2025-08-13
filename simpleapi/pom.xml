@@ -41,7 +41,7 @@
 						<target>Cloudhub-US-East-2</target>
 						<muleVersion>4.9.7</muleVersion>
 						<username>Kanneganti7905</username>
-						<password>Ishaan@2018</password>
+						<password>Bhavika@1431</password>
 						<applicationName>simpleapi</applicationName>
 						<replicas>1</replicas>
 						<vCores>1</vCores>
