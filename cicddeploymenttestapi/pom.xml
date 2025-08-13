@@ -25,6 +25,26 @@
 				<version>3.2.0</version>
 			</plugin>
 			<plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-install-plugin</artifactId>
+			  <version>3.1.1</version>
+			  <executions>
+				<execution>
+				  <phase>install</phase>
+				  <goals>
+					<goal>install-file</goal>
+				  </goals>
+				  <configuration>
+					<file>${project.build.directory}/${project.artifactId}-${project.version}-mule-application.jar</file>
+					<groupId>${project.groupId}</groupId>
+					<artifactId>${project.artifactId}</artifactId>
+					<version>${project.version}</version>
+					<packaging>mule-application</packaging>
+				  </configuration>
+				</execution>
+			  </executions>
+			</plugin>
+			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
