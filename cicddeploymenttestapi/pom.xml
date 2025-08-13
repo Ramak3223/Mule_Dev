@@ -86,11 +86,11 @@
         </plugins>
     </build>
 	<distributionManagement>
-		<repository>
+		<snapshotRepository>
 			<id>anypoint-exchange</id>
 			<name>Anypoint Exchange</name>
 			<url>https://maven.anypoint.mulesoft.com/api/v3/maven</url>
-		</repository>
+		</snapshotRepository>
 		<repository>
 			<id>anypoint-exchange-release</id>
 			<url>https://maven.anypoint.mulesoft.com/api/v3/maven/releases</url>
